@@ -13,7 +13,7 @@ This project lets the user create a reservation in a restaurant and see the list
 ## GitHub Repository
 [https://github.com/giannifontanot/hot-restaurant/](https://github.com/giannifontanot/hot-restaurant/)
 ## Live Link
-[https://giannifontanot.github.io/hot-restaurant](https://giannifontanot.github.io/hot-restaurant)
+This project runs with NodeJS. At this time there no live link of this project.
 ## Support
 If you need help with this project, please write to: [giannifontanot@gmail.com](giannifontanot@gmail.com)
 ## Authors
