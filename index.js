@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 // Data is stored un an array
-const tables = [];
+let tables = [];
 
 
 
@@ -48,7 +48,33 @@ app.post('/saveReservation', (req, res) => {
 
     console.log(tables);
 });
+// Route to process the data sent
+app.get('/listTables', (req, res) => {
+tables=[
+    {
+        name: "Luis",
+        phone: "(214) 1234-1234",
+        email: "luis@gmail",
+        id: "1234",
+    },
+    {
+        name: "Mario",
+        phone: "(832) 1234-1234",
+        email: "mario@gmail",
+        id: "5678",
+    },
+    {
+        name: "Pedro",
+        phone: "(972) 1234-1234",
+        email: "pedro@gmail",
+        id: "4321",
+    },
+];
+    JSON.stringify(tables) ;
+     console.log("JSON.stringify(tables): " + JSON.stringify(tables));
+     return res.json(tables);
 
+});
 
 // Server is listening
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
