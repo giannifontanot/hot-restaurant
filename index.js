@@ -12,6 +12,7 @@ const app = express();
 const PORT = 3000;
 
 // Sets up the Express app to handle data parsing
+app.use(express.static(__dirname + '/'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
@@ -41,9 +42,8 @@ app.post('/saveReservation', (req, res) => {
     //     }
 
     tables.push( newReservation );
-     console.log("newReservation: " + newReservation);
+    res.sendFile(path.join(__dirname, 'index.html'));
 
-    console.log(tables);
 });
 // Route to process the data sent
 app.get('/fetchTableList', (req, res) => {
