@@ -7,7 +7,6 @@ const fs = require('fs');
 let tables = [];
 
 
-
 // Sets up the Express App
 const app = express();
 const PORT = 3000;
@@ -23,19 +22,14 @@ app.get('/',
 app.get('/newReservation',
     (req, res) => res.sendFile(path.join(__dirname, 'newReservation.html')));
 
-app.get('/showTables',
-    (req, res) => res.sendFile(path.join(__dirname, 'showTables.html')));
+app.get('/tables',
+    (req, res) => res.sendFile(path.join(__dirname, 'tables.html')));
 
 // Route to process the data sent
 app.post('/saveReservation', (req, res) => {
 
     const newReservation = req.body;
-    //const { name ,  phone ,  email ,  id } = newReservation;
-    // console.log("id" + id);
-    // console.log("email" + email);
-    // console.log("phone" + phone);
-    // console.log("name" + name);
-    //
+
     // const reservation =
     //     {
     //         name: name,
@@ -44,35 +38,19 @@ app.post('/saveReservation', (req, res) => {
     //         id: id
     //     }
 
-    tables.push(newReservation);
+    tables.push( newReservation );
+     console.log("newReservation: " + newReservation);
 
     console.log(tables);
 });
 // Route to process the data sent
-app.get('/listTables', (req, res) => {
-tables=[
-    {
-        name: "Luis",
-        phone: "(214) 1234-1234",
-        email: "luis@gmail",
-        id: "1234",
-    },
-    {
-        name: "Mario",
-        phone: "(832) 1234-1234",
-        email: "mario@gmail",
-        id: "5678",
-    },
-    {
-        name: "Pedro",
-        phone: "(972) 1234-1234",
-        email: "pedro@gmail",
-        id: "4321",
-    },
-];
-    JSON.stringify(tables) ;
-     console.log("JSON.stringify(tables): " + JSON.stringify(tables));
-     return res.json(tables);
+app.get('/fetchTableList', (req, res) => {
+
+    console.log("tables: " + tables);
+    fs.writeFile("log.txt", JSON.stringify(tables), err => {
+        console.log(err);
+    });
+    return res.json(tables);
 
 });
 

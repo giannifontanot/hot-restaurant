@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Tables</title>
+</head>
+<body>
+<h1>tables</h1>
+<ul class="table-list">
+
+</ul>
+
+
+<script>
+    function createTable(id, name, phone, email) {
+
+        const card = "<table>" +
+            "<tr><td>id</td><td>" + id + "</td></tr>" +
+            "<tr><td>name</td><td>" + name + "</td></tr>" +
+            "<tr><td>phone</td><td>" + phone + "</td></tr>" +
+            "<tr><td>email</td><td>" + email + "</td></tr>" +
+            "</table>";
+        return card;
+    }
+</script>
+
+
+<script>
+    fetch("/fetchTableList")
+        .then(function (   response   ) {
+            return response.json();
+        })
+        .catch(err => {
+            console.log('error is:', err);
+            console.log('catch1');
+        })
+        .then(function ( data ) {
+            for (let i = 0; i < data.length; i++) {
+                const parentList = document.querySelector('.table-list');
+                const liEl = document.createElement('li');
+                liEl.innerHTML = createTable(data[i].id, data[i].name, data[i].phone, data[i].email);
+                parentList.appendChild(liEl);
+            }
+        })
+        .catch(err => {
+            console.log('error is:', err);
+            console.log('catch1');
+        });
+</script>
+</body>
+</html>
