@@ -2,18 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>New Reservation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+
 </head>
 <body>
-<form action="/saveReservation" method="post">
-    <input type="text" name="name" placeholder="write your name" value="henry">
-    <input type="text" name="phone" placeholder="phone number" value="(214) 00 00">
-    <input type="text" name="email" placeholder="email address" value="h@henry.com">
-    <input type="text" name="id" placeholder="write your id" value="12436" >
-    <input type="submit" value="save">
+<h1>Make a reservation</h1>
+<form class="pure-form pure-form-aligned" action="/saveReservation" method="post"></div>
+    <div class="pure-control-group"><label for="id">id</label> <input type="text" name="id" placeholder="write your id" value="12436" ></div>
+    <div class="pure-control-group"><label for="name">name</label><input type="text" name="name" placeholder="write your name" value="henry"></div>
+    <div class="pure-control-group"><label for="phone">phone</label><input type="text" name="phone" placeholder="phone number" value="(214) 00 00"></div>
+    <div class="pure-control-group"><label for="email">email</label><input type="text" name="email" placeholder="email address" value="h@henry.com"></div>
+    <div class="pure-controls"><input class="pure-button button-secondary" type="submit" value="Save your reservation"></div>
 </form>
 </body>
 </html>

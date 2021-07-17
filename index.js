@@ -28,14 +28,16 @@ app.get('/tables',
 // Route to process the data sent
 app.post('/saveReservation', (req, res) => {
 
-    const newReservation = req.body;
+    const  newReservation  = req.body;
+     console.log("newReservation: " + newReservation);
 
     // const reservation =
     //     {
     //         name: name,
     //         phone: phone,
     //         email: email,
-    //         id: id
+     //         id: id
+
     //     }
 
     tables.push( newReservation );

@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tables</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+
 </head>
 <body>
-<h1>tables</h1>
+<h1>Tables</h1>
 <ul class="table-list">
 
 </ul>
@@ -17,12 +19,12 @@
 <script>
     function createTable(id, name, phone, email) {
 
-        const card = "<table>" +
-            "<tr><td>id</td><td>" + id + "</td></tr>" +
-            "<tr><td>name</td><td>" + name + "</td></tr>" +
-            "<tr><td>phone</td><td>" + phone + "</td></tr>" +
-            "<tr><td>email</td><td>" + email + "</td></tr>" +
-            "</table>";
+        const card = "<table  class='pure-table pure-table-horizontal'>" +
+            "<tr><th>id</th><td>" + id + "</td></tr>" +
+            "<tr><th>name</th><td>" + name + "</td></tr>" +
+            "<tr><th>phone</th><td>" + phone + "</td></tr>" +
+            "<tr><th>email</th><td>" + email + "</td></tr>" +
+            "</table><br>";
         return card;
     }
 </script>
