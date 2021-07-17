@@ -1,15 +1,14 @@
 // Dependencies
-
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
+// Data is stored un an array
 const tables = [];
 
 
 
 // Sets up the Express App
-
 const app = express();
 const PORT = 3000;
 
