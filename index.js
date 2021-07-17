@@ -3,9 +3,8 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
-// Data is stored un an array
+// Data is stored in an array
 let tables = [];
-
 
 // Sets up the Express App
 const app = express();
@@ -30,17 +29,6 @@ app.get('/tables',
 app.post('/saveReservation', (req, res) => {
 
     const  newReservation  = req.body;
-     console.log("newReservation: " + newReservation);
-
-    // const reservation =
-    //     {
-    //         name: name,
-    //         phone: phone,
-    //         email: email,
-     //         id: id
-
-    //     }
-
     tables.push( newReservation );
     res.sendFile(path.join(__dirname, 'index.html'));
 
